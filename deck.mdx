@@ -1,0 +1,776 @@
+import { Notes } from 'mdx-deck'
+export { default as theme } from './theme';
+
+# Phoenix
+
+`A new CLI for a new beginning`
+
+---
+
+# Phoenix
+
+`A new CLI for a new beginning`
+
+# 🔥🤘🔥🤘🔥🤘🔥🤘🔥
+
+
+---
+
+# ¿Qué vamos a ver?
+
+---
+
+# ¿Qué vamos a ver?
+
+`Ponedos los manguitos!`
+
+`Vamos a dar un chapuzón en la piscina tobillera!`
+
+---
+
+En este taller introductorio vamos a ver:
+
+---
+
+En este taller introductorio vamos a ver:
+
+- `introducción al CLI`
+
+---
+
+En este taller introductorio vamos a ver:
+
+- `introducción al CLI`
+- `una vista panorámica del proyecto`
+
+---
+
+# Introducción al CLI
+
+___
+
+# Introducción al CLI
+1. ¿Qué es `phoenix`?
+
+___
+
+# Introducción al CLI
+1. ¿Qué es `phoenix`?
+2. Cómo iniciar `phoenix`
+
+___
+
+# Introducción al CLI
+1. ¿Qué es `phoenix`?
+2. Cómo iniciar `phoenix`
+3. Comandos de `phoenix`
+
+___
+
+# Introducción al CLI
+1. ¿Qué es `phoenix`?
+2. Cómo iniciar `phoenix`
+3. Comandos de `phoenix`
+4. Cómo añadir un nuevo comando
+
+___
+
+# Introducción al CLI
+1. ¿Qué es `phoenix`?
+2. Cómo iniciar `phoenix`
+3. Comandos de `phoenix`
+4. Cómo añadir un nuevo comando
+5. Cómo añadir una nueva tarea
+
+___
+
+# Introducción al CLI
+1. ¿Qué es `phoenix`?
+2. Cómo iniciar `phoenix`
+3. Comandos de `phoenix`
+4. Cómo añadir un nuevo comando
+5. Cómo añadir una nueva tarea
+6. Tareas del prebuild
+
+___
+
+# ¿Qué es phoenix?
+
+___
+
+# ¿Qué es phoenix?
+
+Interfaz de línea de comandos basada en [gluegun]( https://github.com/infinitered/gluegun).
+
+___
+
+# ¿Qué es phoenix?
+
+Interfaz de línea de comandos basada en [gluegun]( https://github.com/infinitered/gluegun).
+
+Se pueden ejecutar tareas de dos maneras:
+
+___
+
+# ¿Qué es phoenix?
+
+Interfaz de línea de comandos basada en [gluegun]( https://github.com/infinitered/gluegun).
+
+Se pueden ejecutar tareas de dos maneras:
+
+1. bien utilizando extensiones de `gluegun`
+
+___
+
+# ¿Qué es phoenix?
+
+Interfaz de línea de comandos basada en [gluegun]( https://github.com/infinitered/gluegun).
+
+Se pueden ejecutar tareas de dos maneras:
+
+1. bien utilizando extensiones de `gluegun`
+2. bien lanzando el script de `node` directamente
+
+---
+
+# Cómo iniciar phoenix
+
+---
+
+# Cómo iniciar phoenix
+
+1. Hacer un 'checkout' de la rama:
+
+```bash
+git checkout feature-core-DB-145519-webpack-empaquetado-local-dev-server
+```
+
+---
+
+# Cómo iniciar phoenix
+
+2. Cambiar a una versión de node soportado (> v9.6).
+
+_Un cambio de versión de node requiere reconstruir los binarios de node-sass._
+
+```bash
+npm rebuild node-sass
+```
+
+---
+
+# Cómo iniciar phoenix
+
+3. Habilitar el toggle de phoenix en _ei.toggles.json_:
+```js
+"phoenixEnabled": {
+  "description": "Enables the phoenix version of the application",
+  "ownerTeam": "Core",
+  "value": true // <= Change me
+}
+```
+
+---
+
+# Cómo iniciar phoenix
+
+4. Instalar phoenix y sus dependencias:
+```bash
+npm run phoenix-install
+```
+
+---
+
+# Comandos de phoenix
+
+---
+
+# Comandos de phoenix
+
+1. `init`
+
+---
+
+# Comandos de phoenix
+
+1. `init`
+2. `task`
+
+---
+
+# Comandos de phoenix
+
+1. `init`
+2. `task`
+3. `phoenix`
+
+---
+
+## `init`
+
+---
+
+## `init`
+Inicializa webpack y sirve la aplicación phoenix.
+
+---
+
+## `init`
+Inicializa webpack y sirve la aplicación phoenix.
+
+Se pide al usuario, mediante un prompt, la confirmación para lanzar la etapa de prebuild.
+
+---
+
+## `init`
+Inicializa webpack y sirve la aplicación phoenix.
+
+Se pide al usuario, mediante un prompt, la confirmación para lanzar la etapa de prebuild.
+
+Además, recibe dos argumentos opcionales: `env` y `endpoint`.
+
+---
+
+## `init`
+Inicializa webpack y sirve la aplicación phoenix.
+
+Se pide al usuario, mediante un prompt, la confirmación para lanzar la etapa de prebuild.
+
+Además, recibe dos argumentos opcionales: `env` y `endpoint`.
+
+En ausencia de éstos, la aplicación se levanta con una configuración por defecto:
+
+- El entorno local (`env`= 'local')
+- Contra el endpoint de integrado (`endpoint`= 'ei')
+
+---
+
+## Uso de `init`
+
+---
+
+## Uso de `init`
+
+Levantar phoenix con entorno y endpoint por defecto:
+
+```bash
+phoenix init
+```
+
+---
+
+## Uso de `init`
+
+Levantar phoenix con entorno y endpoint por defecto:
+
+```bash
+phoenix init
+```
+
+Levanta phoenix con la configuración del entorno de integrado y el endpoint por defecto:
+
+```bash
+phoenix init ei
+```
+
+---
+
+## Uso de `init`
+
+Levantar phoenix con entorno y endpoint por defecto:
+
+```bash
+phoenix init
+```
+
+Levanta phoenix con la configuración del entorno de integrado y el endpoint por defecto:
+
+```bash
+phoenix init ei
+```
+
+Levanta phoenix con la configuración de entorno local y el endpoint de integrado:
+
+```bash
+phoenix init local ei
+```
+
+---
+
+## `task`
+
+---
+
+## `task`
+Permite lanzar tareas de la fase de prebuild por separado.
+
+---
+
+## `task`
+Permite lanzar tareas de la fase de prebuild por separado.
+
+El objetivo es facilitar las labores de desarrollo.
+
+---
+
+## `task`
+Permite lanzar tareas de la fase de prebuild por separado.
+
+El objetivo es facilitar las labores de desarrollo.
+
+Recibe el listado de tareas como argumento, separadas por comas y sin espacios.
+
+---
+
+## `task`
+Permite lanzar tareas de la fase de prebuild por separado.
+
+El objetivo es facilitar las labores de desarrollo.
+
+Recibe el listado de tareas como argumento, separadas por comas y sin espacios.
+
+Nótese que las tareas no tienen por qué ser consecutivas.
+
+---
+
+## `task`
+Permite lanzar tareas de la fase de prebuild por separado.
+
+El objetivo es facilitar las labores de desarrollo.
+
+Recibe el listado de tareas como argumento, separadas por comas y sin espacios.
+
+Nótese que las tareas no tienen por qué ser consecutivas.
+
+Sin embargo, han de respetar el orden especificado para el prebuild.
+
+<Notes>Se verá en la seccion 'Tareas del prebuild'</Notes>
+
+---
+
+## Uso de `task`
+
+---
+
+## Uso de `task`
+Lanzar las tareas `privateTemplates` y `publicTemplates`:
+
+```bash
+phoenix task privateTemplates,publicTemplates
+```
+
+---
+
+## `phoenix`
+
+___
+
+## `phoenix`
+Despliega un menú de ayuda con una descripción corta para cada comando.
+
+```bash
+phoenix
+```
+___
+
+# Cómo añadir un nuevo comando
+
+---
+
+# Cómo añadir un nuevo comando
+
+Para añadir un nuevo comando a phoenix, bastaría con generar su fichero js correspondiente.
+
+```bash
+src/commands/newCommand.js
+```
+
+---
+
+# Cómo añadir una nueva tarea
+
+---
+
+# Cómo añadir una nueva tarea
+
+Para crear una nueva tarea, bastaría con llevar a cabo unos sencillos pasos.
+
+---
+
+# Cómo añadir una nueva tarea
+
+Para crear una nueva tarea, bastaría con llevar a cabo unos sencillos pasos.
+
+1. Modificar `cli.constants.js`
+
+---
+
+# Cómo añadir una nueva tarea
+
+Para crear una nueva tarea, bastaría con llevar a cabo unos sencillos pasos.
+
+1. Modificar `cli.constants.js`
+2. Modificar `utils.js`
+
+---
+
+# Modificar `cli.constants.js`
+
+---
+
+# Modificar `cli.constants.js`
+
+Incluir la información relativa al nuevo comando en el fichero de constantes:
+
+`src/toolbox/cli.constants.js`
+
+---
+
+# Modificar `cli.constants.js`
+
+Incluir la información relativa al nuevo comando en el fichero de constantes:
+
+`src/toolbox/cli.constants.js`
+
+* Script a ejecutar
+
+---
+
+# Modificar `cli.constants.js`
+
+Incluir la información relativa al nuevo comando en el fichero de constantes:
+
+`src/toolbox/cli.constants.js`
+
+* Script a ejecutar
+* Descripción
+
+---
+
+# Modificar `cli.constants.js`
+
+Incluir la información relativa al nuevo comando en el fichero de constantes:
+
+`src/toolbox/cli.constants.js`
+
+* Script a ejecutar
+* Descripción
+* Mensajes de error específicos si aplica
+
+---
+
+# Modificar `cli.constants.js`
+
+Incluir la información relativa al nuevo comando en el fichero de constantes:
+
+`src/toolbox/cli.constants.js`
+
+* Script a ejecutar
+* Descripción
+* Mensajes de error específicos si aplica
+* Es **importante** añadir una entrada a la constante `TASK_DESCRIPTIONS`
+
+---
+
+# Modificar `utils.js`
+
+---
+
+# Modificar `utils.js`
+Añadir la `key:value` correspondiente a la nueva tarea en el objeto que las define.
+
+---
+
+# Modificar `utils.js`
+Añadir la `key:value` correspondiente a la nueva tarea en el objeto que las define.
+
+Se expone en una función en el fichero `src/toolbox/scripts/utils.js`:
+
+```js
+const getGluegunTasks = (init, env, endpoint, skip) => {
+  return {
+    ...
+    newCommand: {
+      title: descriptions.newCommand,
+      task: newCommand({ args }),
+      skip: () => skip
+    },
+    ...
+```
+
+---
+
+# Tareas del prebuild
+
+---
+
+# Tareas del prebuild
+
+El objetivo de estas tareas es:
+
+---
+
+# Tareas del prebuild
+
+El objetivo de estas tareas es:
+
+- `efectuar algunas modificaciones sobre ficheros`
+
+---
+
+# Tareas del prebuild
+
+El objetivo de estas tareas es:
+
+- `efectuar algunas modificaciones sobre ficheros`
+- `generar un entorno consistente`
+
+---
+
+# Tareas del prebuild
+
+El objetivo de estas tareas es:
+
+- `efectuar algunas modificaciones sobre ficheros`
+- `generar un entorno consistente`
+
+La mayoría serán imprescindibles mientras dure el período de convivencia.
+
+A continuación se ofrece una descripción de las tareas comentadas.
+
+<Notes>Una vez superado éste, podrán eliminarse para aligerar el prebuild. Ha de tenerse en cuenta el orden de ejecución de las mismas, pues existen dependencias entre ellas.</Notes>
+
+---
+
+- `remove`
+
+Elimina el build previo de phoenix.
+
+---
+
+- `remove`
+
+Elimina el build previo de phoenix.
+
+- `configAndToggles`
+
+En base al entorno y endpoint seleccionados, genera los ficheros de configuración y toggles de aplicación.
+
+---
+
+- `remove`
+
+Elimina el build previo de phoenix.
+
+- `configAndToggles`
+
+En base al entorno y endpoint seleccionados, genera los ficheros de configuración y toggles de aplicación.
+
+- `webComponents`
+
+Construye el proyecto webComponents.
+
+---
+
+- `copyFiles`
+
+Copia una serie de recursos necesarios para el arranque de phoenix.
+
+---
+
+- `copyFiles`
+
+Copia una serie de recursos necesarios para el arranque de phoenix.
+
+- `transformScripts`
+
+Aplica transformaciones a código js para el build de webpack.
+
+---
+
+- `copyFiles`
+
+Copia una serie de recursos necesarios para el arranque de phoenix.
+
+- `transformScripts`
+
+Aplica transformaciones a código js para el build de webpack.
+
+- `compileSass`
+
+Compila el sass.
+
+---
+
+- `privateTemplates`
+
+Crea un fichero del tipo 'barrel' para juntar todas las plantillas de la parte privada.
+
+---
+
+- `privateTemplates`
+
+Crea un fichero del tipo 'barrel' para juntar todas las plantillas de la parte privada.
+
+- `privateTemplatesGlobalPosition`
+
+Crea un fichero del tipo 'barrel' para juntar todas las plantillas de la posición global.
+
+---
+
+- `privateTemplates`
+
+Crea un fichero del tipo 'barrel' para juntar todas las plantillas de la parte privada.
+
+- `privateTemplatesGlobalPosition`
+
+Crea un fichero del tipo 'barrel' para juntar todas las plantillas de la posición global.
+
+- `publicTemplates`
+
+Crea un fichero del tipo 'barrel' para juntar todas las plantillas de la parte pública.
+
+---
+
+- `i18n`
+
+Procesa todos los ficheros implicados en la internacionalización de los textos de la aplicación.
+
+---
+
+- `i18n`
+
+Procesa todos los ficheros implicados en la internacionalización de los textos de la aplicación.
+
+- `mixins`
+
+Procesa los mixins.
+
+---
+
+- `i18n`
+
+Procesa todos los ficheros implicados en la internacionalización de los textos de la aplicación.
+
+- `mixins`
+
+Procesa los mixins.
+
+- `validations`
+
+Añade validaciones a los ficheros `html`.
+
+___
+
+- `bundles`
+
+Crea los ficheros 'bundle' para cada operativa.
+
+---
+
+# Una vista panorámica del proyecto
+
+___
+
+# Una vista panorámica del proyecto
+
+1. Build de `webpack` para el entorno de desarrollo
+
+___
+
+# Una vista panorámica del proyecto
+
+1. Build de `webpack` para el entorno de desarrollo
+2. Build de `webpack` para el resto de los entornos
+
+___
+
+# Una vista panorámica del proyecto
+
+1. Build de `webpack` para el entorno de desarrollo
+2. Build de `webpack` para el resto de los entornos
+
+Para estos puntos vamos a ver código.
+
+# :thumbsup:
+
+___
+
+# Webpack - el entorno `dev`
+
+`A poneros los manguitos, vamos a la piscina tobillera!`
+___
+
+### Abrid el directorio de `phoenix`:
+
+___
+
+### Abrid el directorio de `phoenix`:
+
+```js
+phoenix
+- build-src
+- docs
+- src
+```
+___
+
+### Abrid el directorio de `phoenix`:
+
+```js
+phoenix
+- build-src
+- docs
+- src
+webpack.alias.js
+webpack.common.config.js
+webpack.config.js
+webpack.development.config.js
+webpack.production.config.js
+webpack.server.js
+```
+___
+
+# Webpack - los entornos de `pro`
+
+___
+
+# Webpack - los entornos de `pro`
+
+Ahora vamos a inspeccionar el directorio `build-dist`.
+
+___
+
+# Webpack - los entornos de `pro`
+
+Ahora vamos a inspeccionar el directorio `build-dist`.
+
+Esta es la primera fase de la configuración de `pro`.
+
+___
+
+# Webpack - los entornos de `pro`
+
+Ahora vamos a inspeccionar el directorio `build-dist`.
+
+Esta es la primera fase de la configuración de `pro`.
+
+Es de esperar que el contenido de dicho directorio sufrirá cambios.
+
+___
+
+# Webpack - los entornos de `pro`
+
+Ahora vamos a inspeccionar el directorio `build-dist`.
+
+Esta es la primera fase de la configuración de `pro`.
+
+Es de esperar que el contenido de dicho directorio sufrirá cambios.
+
+`Al código!`
+
+___
+
+# Eso es todo amigos
+
+`Muchas gracias!`
